@@ -115,6 +115,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cBkGround.cpp" />
+    <ClCompile Include="cGameStuVer.cpp" />
+    <ClCompile Include="cSDL2WNDManager.cpp" />
+    <ClCompile Include="cSprite.cpp" />
+    <ClCompile Include="cTexture.cpp" />
+    <ClCompile Include="cTextureMgr.cpp" />
+    <ClCompile Include="cTileMapStuVer.cpp" />
+    <ClCompile Include="cTreePicker.cpp" />
+    <ClCompile Include="TreePlanterSDL.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cBkGround.h" />
+    <ClInclude Include="cGame.h" />
+    <ClInclude Include="cSDL2WNDManager.h" />
+    <ClInclude Include="cSprite.h" />
+    <ClInclude Include="cTexture.h" />
+    <ClInclude Include="cTextureMgr.h" />
+    <ClInclude Include="cTileMap.h" />
+    <ClInclude Include="cTreePicker.h" />
+    <ClInclude Include="GameConstants.h" />
+    <ClInclude Include="treeplanterGame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
