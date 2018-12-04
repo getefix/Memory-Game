@@ -171,6 +171,7 @@ bool cGame::getInput(bool theLoop)
 				}
 				break;
 				case SDL_BUTTON_RIGHT:
+					theTileMap.clear();
 					break;
 				default:
 					break;

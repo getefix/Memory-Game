@@ -53,6 +53,9 @@ private:
 	// Define the elements and there position in/on the array/map
 	SDL_Point treeTileClicked;
 	SDL_Point mapTileClicked;
+
+	// Randomly assigned map that the player will need to guess.
+	int memorisedMap[3][3];
 };
 
 #endif

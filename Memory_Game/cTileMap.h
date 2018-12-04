@@ -10,11 +10,12 @@ cTileMap.h
 #include "cSprite.h"
 #include <random>
 
+#define BOARD_SIZE 3
 
 class cTileMap: public cSprite
 {
 protected:
-	int tileMap[3][3];
+	int tileMap[BOARD_SIZE][BOARD_SIZE];
 
 private:
 	SDL_Point mapStartXY;
@@ -27,6 +28,8 @@ public:
 
 	void render(SDL_Window* theSDLWND, SDL_Renderer* theRenderer, cTextureMgr* theTxtMgr, vector<LPCSTR> theTxt);		// Default render function
 	void update(SDL_Point theMapAreaClicked, int theTreeToPlant);
+	// Sets all tiles to 1
+	void clear();
 	void setMapStartXY(SDL_Point startPosXY);
 	SDL_Point getMapStartXY();
 };

@@ -94,6 +94,22 @@ void cTileMap::update(SDL_Point theMapAreaClicked, int theTreeToPlant)
 
 /*
 =================================================================
+- Set the values for the map to 1 to show a blank map
+=================================================================
+*/
+void cTileMap::clear()
+{
+	for (int row = 0; row < BOARD_SIZE; row++)
+	{
+		for (int column = 0; column < BOARD_SIZE; column++)
+		{
+			tileMap[row][column] = 1;
+		}
+	}
+}
+
+/*
+=================================================================
 - Set the initial values for the map
 =================================================================
 */
@@ -102,27 +118,13 @@ void cTileMap::initialiseMap()
 	/* Let the computer pick a random number */
 	random_device rd;    // non-deterministic engine 
 	mt19937 gen{ rd() }; // deterministic engine. For most common uses, std::mersenne_twister_engine, fast and high-quality.
-	uniform_int_distribution<> dis{ 2, 4 };
+	uniform_int_distribution<> dis{ 1, 4 };
 
-	for (int row = 0; row < 8; row++)
+	for (int row = 0; row < BOARD_SIZE; row++)
 	{
-		for (int column = 0; column < 8; column++)
+		for (int column = 0; column < BOARD_SIZE; column++)
 		{
-			if (row == 0 || row == 7)
-			{
-				tileMap[row][column] = 1;
-			}
-			else
-			{ 
-				if (column == 0 || column == 7)
-				{
-					tileMap[row][column] = 1;
-				}
-				else
-				{
-					tileMap[row][column] = dis(gen);
-				}
-			}
+			tileMap[row][column] = dis(gen);
 		}
 	}
 
