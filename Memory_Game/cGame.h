@@ -55,7 +55,7 @@ private:
 	SDL_Point mapTileClicked;
 
 	// Randomly assigned map that the player will need to guess.
-	int memorisedMap[3][3];
+	int memorisedMap[BOARD_SIZE][BOARD_SIZE];
 };
 
 #endif

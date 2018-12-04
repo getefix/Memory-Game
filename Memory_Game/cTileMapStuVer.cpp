@@ -129,6 +129,14 @@ void cTileMap::initialiseMap()
 	}
 
 }
+int cTileMap::getMapValue(int column, int row)
+{
+	if (column >= BOARD_SIZE)
+		column = BOARD_SIZE;
+	if (row >= BOARD_SIZE)
+		row = BOARD_SIZE;
+	return tileMap[column][row];
+}
 /*
 =================================================================
 - set start position for tile map

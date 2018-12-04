@@ -9,5 +9,6 @@
 #include "cTexture.h"
 #include "cTileMap.h"
 #include "cTreePicker.h"
+#include "cButton.h"
 
 #endif

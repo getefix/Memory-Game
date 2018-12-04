@@ -35,6 +35,9 @@ using namespace std;
 #define WINDOW_WIDTH 1024
 #define WINDOW_HEIGHT 768
 
+//Define the size of the game board
+#define BOARD_SIZE 3
+
 // This header file contains all the constants & enumarated types for the game
 typedef struct fpoint
 {
@@ -46,5 +49,8 @@ inline SDL_Point operator+(SDL_Point const &a, SDL_Point const &b)
 {
 	return SDL_Point{ a.x + b.x , a.y + b.y };
 }
+
+enum class gameState { menu, instructions, createmap, playing, end, quit, highscore };
+enum class btnTypes { exit, instruct, load, play, save, settings, hscore };
 
 #endif

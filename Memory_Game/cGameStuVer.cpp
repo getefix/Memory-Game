@@ -50,6 +50,15 @@ void cGame::initialise(SDL_Window* theSDLWND, SDL_Renderer* theRenderer)
 		theTextureMgr->addTexture(textureName[tCount], texturesToUse[tCount]);
 	}
 	theTileMap.setMapStartXY({ 100, 100 });
+	// Save randomly created map in variable variable.
+	for (int column = 0; column < BOARD_SIZE; column++)
+	{
+		for (int row = 0; row < BOARD_SIZE; row++)
+		{
+			memorisedMap[column][row] = theTileMap.getMapValue(column,row);
+		}
+	}
+
 	theTreePicker.setTreeListStartXY({ 740, 100 });
 
 	spriteBkgd.setSpritePos({ 0, 0 });
@@ -130,10 +139,6 @@ bool cGame::getInput(bool theLoop)
 					SDL_GetMouseState(&mousePos.x, &mousePos.y);
 					//call update on tree picker to set the tree to plant
 					theTreePicker.update(mousePos);
-					/*
-					//call update on tile map passing in the tree to plant
-					theTileMap.update(mousePos, theTreePicker.getTreeToPlant());
-					*/
 
 					//show the drag tile
 					int textureIndex = theTreePicker.getTreeToPlant();

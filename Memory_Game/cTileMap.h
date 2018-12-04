@@ -10,7 +10,7 @@ cTileMap.h
 #include "cSprite.h"
 #include <random>
 
-#define BOARD_SIZE 3
+
 
 class cTileMap: public cSprite
 {
@@ -30,6 +30,8 @@ public:
 	void update(SDL_Point theMapAreaClicked, int theTreeToPlant);
 	// Sets all tiles to 1
 	void clear();
+	// Get number in array
+	int getMapValue(int column, int row);
 	void setMapStartXY(SDL_Point startPosXY);
 	SDL_Point getMapStartXY();
 };
