@@ -125,7 +125,23 @@ bool cGame::getInput(bool theLoop)
 				{
 					
 					// Lab code goes here
-					
+					//get mouse point
+					SDL_Point mousePos;
+					SDL_GetMouseState(&mousePos.x, &mousePos.y);
+					//call update on tree picker to set the tree to plant
+					theTreePicker.update(mousePos);
+					/*
+					//call update on tile map passing in the tree to plant
+					theTileMap.update(mousePos, theTreePicker.getTreeToPlant());
+					*/
+
+					//show the drag tile
+					int textureIndex = theTreePicker.getTreeToPlant();
+					if (textureIndex >= 0)
+					{
+						textureIndex = 4 + (textureIndex % 5);
+						dragTile.setTexture(theTextureMgr->getTexture(textureName[textureIndex]));
+					}
 				}
 				break;
 				case SDL_BUTTON_RIGHT:
@@ -140,7 +156,17 @@ bool cGame::getInput(bool theLoop)
 				case SDL_BUTTON_LEFT:
 				{
 					
-					// Lab codes goes here
+					// get mouse point
+						SDL_Point mousePos;
+					SDL_GetMouseState(&mousePos.x, &mousePos.y);
+					//call update on tile map passing in the tree to plant
+					theTileMap.update(mousePos, theTreePicker.getTreeToPlant());
+
+					//reset the tree to plant
+					theTreePicker.setTreeToPlant(-1);
+
+					//hide the drag tile
+					dragTile.setTexture(theTextureMgr->getTexture("transparent"));
 					
 				}
 				break;
@@ -154,7 +180,12 @@ bool cGame::getInput(bool theLoop)
 			{
 				
 				// Lab Code goes here
-				
+				//get mouse point
+				SDL_Point mousePos;
+				SDL_GetMouseState(&mousePos.x, &mousePos.y);
+
+				//set drag tile position
+				dragTile.setSpritePos(mousePos);
 			}
 			break;
 			case SDL_KEYDOWN:

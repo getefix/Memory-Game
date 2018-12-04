@@ -87,7 +87,7 @@ void cTileMap::update(SDL_Point theMapAreaClicked, int theTreeToPlant)
 			{
 				this->tileClickedRC.x = (int)(areaClicked.x - this->mapStartXY.x) / this->aTile.getSpriteDimensions().w;
 				this->tileClickedRC.y = (int)(areaClicked.y - this->mapStartXY.y) / this->aTile.getSpriteDimensions().h;
-				this->tileMap[this->tileClickedRC.x][this->tileClickedRC.y] = theTreeToPlant;
+				this->tileMap[this->tileClickedRC.y][this->tileClickedRC.x] = theTreeToPlant;
 			}
 		}
 }

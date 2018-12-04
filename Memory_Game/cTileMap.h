@@ -14,7 +14,7 @@ cTileMap.h
 class cTileMap: public cSprite
 {
 protected:
-	int tileMap[8][8];
+	int tileMap[3][3];
 
 private:
 	SDL_Point mapStartXY;
